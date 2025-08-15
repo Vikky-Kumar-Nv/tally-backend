@@ -1,0 +1,4 @@
+Name,Unit,Opening Balance,Opening Value,Stock Group,GST Rate,HSN Code,Tax Type,Purchase Rate,Sale Rate,Enable Batch,Allow Negative,Maintain Pieces,Secondary Unit
+Laptop Dell Inspiron,Piece,10,450000,Electronics,18,8471,Taxable,40000,45000,false,false,true,
+Mobile Samsung Galaxy,Piece,25,625000,Electronics,18,8517,Taxable,22000,25000,false,false,true,
+Office Chair Premium,Piece,15,120000,Furniture,18,9401,Taxable,7000,8000,false,false,true,

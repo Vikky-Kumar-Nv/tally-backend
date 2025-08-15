@@ -1,0 +1,350 @@
+{"level":"info","message":"Server running on http://localhost:5000","timestamp":"2025-06-11T06:41:24.388Z"}
+{"level":"info","message":"Server running on http://localhost:5000","timestamp":"2025-06-11T06:41:50.755Z"}
+{"level":"info","message":"Server running on http://localhost:5000","timestamp":"2025-06-11T06:51:55.512Z"}
+{"level":"info","message":"Server running on http://localhost:5000","timestamp":"2025-06-11T06:53:43.295Z"}
+{"level":"info","message":"Prisma Info: Starting a mysql pool with 9 connections.","timestamp":"2025-06-11T06:57:51.139Z"}
+{"level":"info","message":"Query: BEGIN","timestamp":"2025-06-11T06:57:51.576Z"}
+{"level":"info","message":"Params: []","timestamp":"2025-06-11T06:57:51.577Z"}
+{"level":"info","message":"Duration: 5ms","timestamp":"2025-06-11T06:57:51.578Z"}
+{"level":"info","message":"Query: INSERT INTO `mydb`.`Company` (`id`,`name`,`financialYear`,`booksBeginningYear`,`address`,`pin`,`phoneNumber`,`email`,`panNumber`,`gstNumber`,`state`,`country`,`userId`,`createdAt`,`updatedAt`) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)","timestamp":"2025-06-11T06:57:51.841Z"}
+{"level":"info","message":"Params: [null,\"Test Company\",\"2025-26\",\"2025\",\"123 Test Street\",\"400001\",\"9876543210\",\"test@company.com\",\"AAAAA0000A\",\"27AAAAA0000A1Z5\",\"Maharashtra\",\"India\",1,\"2025-06-11 06:57:51.526 UTC\",\"2025-06-11 06:57:51.526 UTC\"]","timestamp":"2025-06-11T06:57:51.842Z"}
+{"level":"info","message":"Duration: 222ms","timestamp":"2025-06-11T06:57:51.842Z"}
+{"level":"info","message":"Query: ROLLBACK","timestamp":"2025-06-11T06:57:51.854Z"}
+{"level":"info","message":"Params: []","timestamp":"2025-06-11T06:57:51.855Z"}
+{"level":"info","message":"Duration: 9ms","timestamp":"2025-06-11T06:57:51.856Z"}
+{"level":"error","message":"Prisma Error: \nInvalid `db_1.default.company.create()` invocation in\nE:\\ProgramingByVikky\\Enegix\\GST_BILLING\\Backend\\public\\api\\services\\companyService.js:22:48\n\n  19 const db_1 = __importDefault(require(\"../../config/db\"));\n  20 const redis_1 = require(\"../utils/redis\");\n  21 const createCompany = (input, userId) => __awaiter(void 0, void 0, void 0, function* () {\n→ 22     const company = yield db_1.default.company.create(\nForeign key constraint violated on the fields: (`userId`)","timestamp":"2025-06-11T06:57:51.863Z"}
+{"clientVersion":"6.8.2","code":"P2003","level":"error","message":"Error creating company: \nInvalid `db_1.default.company.create()` invocation in\nE:\\ProgramingByVikky\\Enegix\\GST_BILLING\\Backend\\public\\api\\services\\companyService.js:22:48\n\n  19 const db_1 = __importDefault(require(\"../../config/db\"));\n  20 const redis_1 = require(\"../utils/redis\");\n  21 const createCompany = (input, userId) => __awaiter(void 0, void 0, void 0, function* () {\n→ 22     const company = yield db_1.default.company.create(\nForeign key constraint violated on the fields: (`userId`)","meta":{"constraint":["userId"],"modelName":"Company"},"name":"PrismaClientKnownRequestError","stack":"PrismaClientKnownRequestError: \nInvalid `db_1.default.company.create()` invocation in\nE:\\ProgramingByVikky\\Enegix\\GST_BILLING\\Backend\\public\\api\\services\\companyService.js:22:48\n\n  19 const db_1 = __importDefault(require(\"../../config/db\"));\n  20 const redis_1 = require(\"../utils/redis\");\n  21 const createCompany = (input, userId) => __awaiter(void 0, void 0, void 0, function* () {\n→ 22     const company = yield db_1.default.company.create(\nForeign key constraint violated on the fields: (`userId`)\n    at Zn.handleRequestError (E:\\ProgramingByVikky\\Enegix\\GST_BILLING\\Backend\\node_modules\\@prisma\\client\\runtime\\library.js:121:7459)\n    at Zn.handleAndLogRequestError (E:\\ProgramingByVikky\\Enegix\\GST_BILLING\\Backend\\node_modules\\@prisma\\client\\runtime\\library.js:121:6784)\n    at Zn.request (E:\\ProgramingByVikky\\Enegix\\GST_BILLING\\Backend\\node_modules\\@prisma\\client\\runtime\\library.js:121:6491)\n    at async l (E:\\ProgramingByVikky\\Enegix\\GST_BILLING\\Backend\\node_modules\\@prisma\\client\\runtime\\library.js:130:9778)","timestamp":"2025-06-11T06:57:51.865Z"}
+{"level":"info","message":"Server running on http://localhost:5000","timestamp":"2025-06-11T07:01:33.433Z"}
+{"level":"info","message":"Prisma Info: Starting a mysql pool with 9 connections.","timestamp":"2025-06-11T07:02:20.116Z"}
+{"level":"info","message":"Query: SELECT `mydb`.`User`.`id`, `mydb`.`User`.`email`, `mydb`.`User`.`password`, `mydb`.`User`.`role`, `mydb`.`User`.`createdAt`, `mydb`.`User`.`updatedAt` FROM `mydb`.`User` WHERE (`mydb`.`User`.`email` = ? AND 1=1) LIMIT ? OFFSET ?","timestamp":"2025-06-11T07:02:20.297Z"}
+{"level":"info","message":"Params: [\"admin@test.com\",1,0]","timestamp":"2025-06-11T07:02:20.297Z"}
+{"level":"info","message":"Duration: 26ms","timestamp":"2025-06-11T07:02:20.298Z"}
+{"level":"info","message":"Query: BEGIN","timestamp":"2025-06-11T07:02:20.338Z"}
+{"level":"info","message":"Params: []","timestamp":"2025-06-11T07:02:20.339Z"}
+{"level":"info","message":"Duration: 1ms","timestamp":"2025-06-11T07:02:20.339Z"}
+{"level":"info","message":"Query: INSERT INTO `mydb`.`User` (`id`,`email`,`password`,`role`,`createdAt`,`updatedAt`) VALUES (?,?,?,?,?,?)","timestamp":"2025-06-11T07:02:20.381Z"}
+{"level":"info","message":"Params: [null,\"admin@test.com\",\"admin123\",\"USER\",\"2025-06-11 07:02:20.340 UTC\",\"2025-06-11 07:02:20.340 UTC\"]","timestamp":"2025-06-11T07:02:20.382Z"}
+{"level":"info","message":"Duration: 42ms","timestamp":"2025-06-11T07:02:20.382Z"}
+{"level":"info","message":"Query: SELECT `mydb`.`User`.`id`, `mydb`.`User`.`email`, `mydb`.`User`.`password`, `mydb`.`User`.`role`, `mydb`.`User`.`createdAt`, `mydb`.`User`.`updatedAt` FROM `mydb`.`User` WHERE `mydb`.`User`.`id` = ? LIMIT ? OFFSET ?","timestamp":"2025-06-11T07:02:20.408Z"}
+{"level":"info","message":"Params: [1,1,0]","timestamp":"2025-06-11T07:02:20.409Z"}
+{"level":"info","message":"Duration: 7ms","timestamp":"2025-06-11T07:02:20.409Z"}
+{"level":"info","message":"Query: COMMIT","timestamp":"2025-06-11T07:02:20.437Z"}
+{"level":"info","message":"Params: []","timestamp":"2025-06-11T07:02:20.437Z"}
+{"level":"info","message":"Duration: 26ms","timestamp":"2025-06-11T07:02:20.438Z"}
+{"level":"info","message":"Query: SELECT 1","timestamp":"2025-06-11T07:02:57.092Z"}
+{"level":"info","message":"Params: []","timestamp":"2025-06-11T07:02:57.092Z"}
+{"level":"info","message":"Duration: 4ms","timestamp":"2025-06-11T07:02:57.093Z"}
+{"level":"info","message":"Query: SELECT `mydb`.`User`.`id`, `mydb`.`User`.`email`, `mydb`.`User`.`password`, `mydb`.`User`.`role`, `mydb`.`User`.`createdAt`, `mydb`.`User`.`updatedAt` FROM `mydb`.`User` WHERE (`mydb`.`User`.`id` = ? AND 1=1) LIMIT ? OFFSET ?","timestamp":"2025-06-11T07:02:57.097Z"}
+{"level":"info","message":"Params: [1,1,0]","timestamp":"2025-06-11T07:02:57.097Z"}
+{"level":"info","message":"Duration: 4ms","timestamp":"2025-06-11T07:02:57.098Z"}
+{"level":"info","message":"Query: BEGIN","timestamp":"2025-06-11T07:02:57.101Z"}
+{"level":"info","message":"Params: []","timestamp":"2025-06-11T07:02:57.102Z"}
+{"level":"info","message":"Duration: 1ms","timestamp":"2025-06-11T07:02:57.102Z"}
+{"level":"info","message":"Query: INSERT INTO `mydb`.`Company` (`id`,`name`,`financialYear`,`booksBeginningYear`,`address`,`pin`,`phoneNumber`,`email`,`panNumber`,`gstNumber`,`state`,`country`,`userId`,`createdAt`,`updatedAt`) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)","timestamp":"2025-06-11T07:02:57.113Z"}
+{"level":"info","message":"Params: [null,\"Test Company\",\"2025-26\",\"2025\",\"123 Test Street\",\"400001\",\"9876543210\",\"test@company.com\",\"AAAAA0000A\",\"27AAAAA0000A1Z5\",\"Maharashtra\",\"India\",1,\"2025-06-11 07:02:57.100 UTC\",\"2025-06-11 07:02:57.100 UTC\"]","timestamp":"2025-06-11T07:02:57.114Z"}
+{"level":"info","message":"Duration: 11ms","timestamp":"2025-06-11T07:02:57.114Z"}
+{"level":"info","message":"Query: SELECT `mydb`.`Company`.`id`, `mydb`.`Company`.`name`, `mydb`.`Company`.`financialYear`, `mydb`.`Company`.`booksBeginningYear`, `mydb`.`Company`.`address`, `mydb`.`Company`.`pin`, `mydb`.`Company`.`phoneNumber`, `mydb`.`Company`.`email`, `mydb`.`Company`.`panNumber`, `mydb`.`Company`.`gstNumber`, `mydb`.`Company`.`state`, `mydb`.`Company`.`country`, `mydb`.`Company`.`userId`, `mydb`.`Company`.`createdAt`, `mydb`.`Company`.`updatedAt` FROM `mydb`.`Company` WHERE `mydb`.`Company`.`id` = ? LIMIT ? OFFSET ?","timestamp":"2025-06-11T07:02:57.118Z"}
+{"level":"info","message":"Params: [2,1,0]","timestamp":"2025-06-11T07:02:57.120Z"}
+{"level":"info","message":"Duration: 4ms","timestamp":"2025-06-11T07:02:57.121Z"}
+{"level":"info","message":"Query: COMMIT","timestamp":"2025-06-11T07:02:57.129Z"}
+{"level":"info","message":"Params: []","timestamp":"2025-06-11T07:02:57.129Z"}
+{"level":"info","message":"Duration: 10ms","timestamp":"2025-06-11T07:02:57.130Z"}
+{"level":"info","message":"Query: SELECT 1","timestamp":"2025-06-11T07:06:09.949Z"}
+{"level":"info","message":"Params: []","timestamp":"2025-06-11T07:06:09.950Z"}
+{"level":"info","message":"Duration: 2ms","timestamp":"2025-06-11T07:06:09.950Z"}
+{"level":"info","message":"Query: SELECT `mydb`.`Company`.`id`, `mydb`.`Company`.`name`, `mydb`.`Company`.`financialYear`, `mydb`.`Company`.`booksBeginningYear`, `mydb`.`Company`.`address`, `mydb`.`Company`.`pin`, `mydb`.`Company`.`phoneNumber`, `mydb`.`Company`.`email`, `mydb`.`Company`.`panNumber`, `mydb`.`Company`.`gstNumber`, `mydb`.`Company`.`state`, `mydb`.`Company`.`country`, `mydb`.`Company`.`userId`, `mydb`.`Company`.`createdAt`, `mydb`.`Company`.`updatedAt` FROM `mydb`.`Company` WHERE `mydb`.`Company`.`userId` = ? LIMIT ? OFFSET ?","timestamp":"2025-06-11T07:06:10.065Z"}
+{"level":"info","message":"Params: [1,1,0]","timestamp":"2025-06-11T07:06:10.065Z"}
+{"level":"info","message":"Duration: 23ms","timestamp":"2025-06-11T07:06:10.066Z"}
+{"level":"info","message":"Query: SELECT `mydb`.`Ledger`.`id`, `mydb`.`Ledger`.`name`, `mydb`.`Ledger`.`openingBalance`, `mydb`.`Ledger`.`companyId`, `mydb`.`Ledger`.`createdAt`, `mydb`.`Ledger`.`updatedAt` FROM `mydb`.`Ledger` WHERE `mydb`.`Ledger`.`companyId` = ?","timestamp":"2025-06-11T07:06:10.145Z"}
+{"level":"info","message":"Params: [2]","timestamp":"2025-06-11T07:06:10.145Z"}
+{"level":"info","message":"Duration: 9ms","timestamp":"2025-06-11T07:06:10.145Z"}
+{"level":"info","message":"Query: SELECT `mydb`.`Voucher`.`id`, `mydb`.`Voucher`.`companyId`, `mydb`.`Voucher`.`createdAt`, `mydb`.`Voucher`.`updatedAt` FROM `mydb`.`Voucher` WHERE `mydb`.`Voucher`.`companyId` = ?","timestamp":"2025-06-11T07:06:10.154Z"}
+{"level":"info","message":"Params: [2]","timestamp":"2025-06-11T07:06:10.155Z"}
+{"level":"info","message":"Duration: 4ms","timestamp":"2025-06-11T07:06:10.155Z"}
+{"level":"info","message":"Server running on http://localhost:5000","timestamp":"2025-06-11T07:09:41.390Z"}
+{"level":"info","message":"Query: SELECT `mydb`.`User`.`id`, `mydb`.`User`.`email`, `mydb`.`User`.`password`, `mydb`.`User`.`role`, `mydb`.`User`.`createdAt`, `mydb`.`User`.`updatedAt` FROM `mydb`.`User` WHERE (`mydb`.`User`.`email` = ? AND 1=1) LIMIT ? OFFSET ?","timestamp":"2025-06-11T07:10:24.660Z"}
+{"level":"info","message":"Params: [\"admin@test.com\",1,0]","timestamp":"2025-06-11T07:10:24.661Z"}
+{"level":"info","message":"Duration: 7ms","timestamp":"2025-06-11T07:10:24.661Z"}
+{"level":"info","message":"Query: SELECT 1","timestamp":"2025-06-11T07:10:44.671Z"}
+{"level":"info","message":"Params: []","timestamp":"2025-06-11T07:10:44.672Z"}
+{"level":"info","message":"Duration: 1ms","timestamp":"2025-06-11T07:10:44.673Z"}
+{"level":"info","message":"Query: SELECT `mydb`.`User`.`id`, `mydb`.`User`.`email`, `mydb`.`User`.`password`, `mydb`.`User`.`role`, `mydb`.`User`.`createdAt`, `mydb`.`User`.`updatedAt` FROM `mydb`.`User` WHERE (`mydb`.`User`.`id` = ? AND 1=1) LIMIT ? OFFSET ?","timestamp":"2025-06-11T07:10:44.678Z"}
+{"level":"info","message":"Params: [1,1,0]","timestamp":"2025-06-11T07:10:44.679Z"}
+{"level":"info","message":"Duration: 6ms","timestamp":"2025-06-11T07:10:44.679Z"}
+{"level":"info","message":"Query: BEGIN","timestamp":"2025-06-11T07:10:44.684Z"}
+{"level":"info","message":"Params: []","timestamp":"2025-06-11T07:10:44.685Z"}
+{"level":"info","message":"Duration: 1ms","timestamp":"2025-06-11T07:10:44.685Z"}
+{"level":"info","message":"Query: INSERT INTO `mydb`.`Company` (`id`,`name`,`financialYear`,`booksBeginningYear`,`address`,`pin`,`phoneNumber`,`email`,`panNumber`,`gstNumber`,`state`,`country`,`userId`,`createdAt`,`updatedAt`) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)","timestamp":"2025-06-11T07:10:44.702Z"}
+{"level":"info","message":"Params: [null,\"Test Company\",\"2025-26\",\"2025\",\"123 Test Street\",\"400001\",\"9876543210\",\"test@company.com\",\"AAAAA0000A\",\"27AAAAA0000A1Z5\",\"Maharashtra\",\"India\",1,\"2025-06-11 07:10:44.682 UTC\",\"2025-06-11 07:10:44.682 UTC\"]","timestamp":"2025-06-11T07:10:44.702Z"}
+{"level":"info","message":"Duration: 17ms","timestamp":"2025-06-11T07:10:44.703Z"}
+{"level":"info","message":"Query: SELECT `mydb`.`Company`.`id`, `mydb`.`Company`.`name`, `mydb`.`Company`.`financialYear`, `mydb`.`Company`.`booksBeginningYear`, `mydb`.`Company`.`address`, `mydb`.`Company`.`pin`, `mydb`.`Company`.`phoneNumber`, `mydb`.`Company`.`email`, `mydb`.`Company`.`panNumber`, `mydb`.`Company`.`gstNumber`, `mydb`.`Company`.`state`, `mydb`.`Company`.`country`, `mydb`.`Company`.`userId`, `mydb`.`Company`.`createdAt`, `mydb`.`Company`.`updatedAt` FROM `mydb`.`Company` WHERE `mydb`.`Company`.`id` = ? LIMIT ? OFFSET ?","timestamp":"2025-06-11T07:10:44.708Z"}
+{"level":"info","message":"Params: [3,1,0]","timestamp":"2025-06-11T07:10:44.709Z"}
+{"level":"info","message":"Duration: 4ms","timestamp":"2025-06-11T07:10:44.711Z"}
+{"level":"info","message":"Query: COMMIT","timestamp":"2025-06-11T07:10:44.724Z"}
+{"level":"info","message":"Params: []","timestamp":"2025-06-11T07:10:44.724Z"}
+{"level":"info","message":"Duration: 15ms","timestamp":"2025-06-11T07:10:44.724Z"}
+{"level":"info","message":"Query: SELECT `mydb`.`Company`.`id`, `mydb`.`Company`.`name`, `mydb`.`Company`.`financialYear`, `mydb`.`Company`.`booksBeginningYear`, `mydb`.`Company`.`address`, `mydb`.`Company`.`pin`, `mydb`.`Company`.`phoneNumber`, `mydb`.`Company`.`email`, `mydb`.`Company`.`panNumber`, `mydb`.`Company`.`gstNumber`, `mydb`.`Company`.`state`, `mydb`.`Company`.`country`, `mydb`.`Company`.`userId`, `mydb`.`Company`.`createdAt`, `mydb`.`Company`.`updatedAt` FROM `mydb`.`Company` WHERE `mydb`.`Company`.`userId` = ? LIMIT ? OFFSET ?","timestamp":"2025-06-11T07:10:56.533Z"}
+{"level":"info","message":"Params: [1,1,0]","timestamp":"2025-06-11T07:10:56.534Z"}
+{"level":"info","message":"Duration: 7ms","timestamp":"2025-06-11T07:10:56.534Z"}
+{"level":"info","message":"Server running on http://localhost:5000","timestamp":"2025-06-11T07:11:47.767Z"}
+{"level":"info","message":"Query: SELECT 1","timestamp":"2025-06-11T07:11:57.583Z"}
+{"level":"info","message":"Params: []","timestamp":"2025-06-11T07:11:57.584Z"}
+{"level":"info","message":"Duration: 2ms","timestamp":"2025-06-11T07:11:57.585Z"}
+{"level":"info","message":"Query: SELECT `mydb`.`User`.`id`, `mydb`.`User`.`email`, `mydb`.`User`.`password`, `mydb`.`User`.`role`, `mydb`.`User`.`createdAt`, `mydb`.`User`.`updatedAt` FROM `mydb`.`User` WHERE (`mydb`.`User`.`email` = ? AND 1=1) LIMIT ? OFFSET ?","timestamp":"2025-06-11T07:11:57.587Z"}
+{"level":"info","message":"Params: [\"admin@test.com\",1,0]","timestamp":"2025-06-11T07:11:57.587Z"}
+{"level":"info","message":"Duration: 2ms","timestamp":"2025-06-11T07:11:57.587Z"}
+{"level":"info","message":"Query: SELECT 1","timestamp":"2025-06-11T07:12:18.269Z"}
+{"level":"info","message":"Params: []","timestamp":"2025-06-11T07:12:18.269Z"}
+{"level":"info","message":"Duration: 2ms","timestamp":"2025-06-11T07:12:18.269Z"}
+{"level":"info","message":"Query: SELECT `mydb`.`User`.`id`, `mydb`.`User`.`email`, `mydb`.`User`.`password`, `mydb`.`User`.`role`, `mydb`.`User`.`createdAt`, `mydb`.`User`.`updatedAt` FROM `mydb`.`User` WHERE (`mydb`.`User`.`id` = ? AND 1=1) LIMIT ? OFFSET ?","timestamp":"2025-06-11T07:12:18.271Z"}
+{"level":"info","message":"Params: [1,1,0]","timestamp":"2025-06-11T07:12:18.271Z"}
+{"level":"info","message":"Duration: 1ms","timestamp":"2025-06-11T07:12:18.272Z"}
+{"level":"info","message":"Query: BEGIN","timestamp":"2025-06-11T07:12:18.275Z"}
+{"level":"info","message":"Params: []","timestamp":"2025-06-11T07:12:18.275Z"}
+{"level":"info","message":"Duration: 1ms","timestamp":"2025-06-11T07:12:18.275Z"}
+{"level":"info","message":"Query: INSERT INTO `mydb`.`Company` (`id`,`name`,`financialYear`,`booksBeginningYear`,`address`,`pin`,`phoneNumber`,`email`,`panNumber`,`gstNumber`,`state`,`country`,`userId`,`createdAt`,`updatedAt`) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)","timestamp":"2025-06-11T07:12:18.280Z"}
+{"level":"info","message":"Params: [null,\"Test Company\",\"2025-26\",\"2025\",\"123 Test Street\",\"400001\",\"9876543210\",\"test@company.com\",\"AAAAA0000A\",\"27AAAAA0000A1Z5\",\"Maharashtra\",\"India\",1,\"2025-06-11 07:12:18.273 UTC\",\"2025-06-11 07:12:18.273 UTC\"]","timestamp":"2025-06-11T07:12:18.282Z"}
+{"level":"info","message":"Duration: 5ms","timestamp":"2025-06-11T07:12:18.282Z"}
+{"level":"info","message":"Query: SELECT `mydb`.`Company`.`id`, `mydb`.`Company`.`name`, `mydb`.`Company`.`financialYear`, `mydb`.`Company`.`booksBeginningYear`, `mydb`.`Company`.`address`, `mydb`.`Company`.`pin`, `mydb`.`Company`.`phoneNumber`, `mydb`.`Company`.`email`, `mydb`.`Company`.`panNumber`, `mydb`.`Company`.`gstNumber`, `mydb`.`Company`.`state`, `mydb`.`Company`.`country`, `mydb`.`Company`.`userId`, `mydb`.`Company`.`createdAt`, `mydb`.`Company`.`updatedAt` FROM `mydb`.`Company` WHERE `mydb`.`Company`.`id` = ? LIMIT ? OFFSET ?","timestamp":"2025-06-11T07:12:18.284Z"}
+{"level":"info","message":"Params: [4,1,0]","timestamp":"2025-06-11T07:12:18.284Z"}
+{"level":"info","message":"Duration: 2ms","timestamp":"2025-06-11T07:12:18.285Z"}
+{"level":"info","message":"Query: COMMIT","timestamp":"2025-06-11T07:12:18.396Z"}
+{"level":"info","message":"Params: []","timestamp":"2025-06-11T07:12:18.397Z"}
+{"level":"info","message":"Duration: 112ms","timestamp":"2025-06-11T07:12:18.397Z"}
+{"level":"info","message":"Server running on http://localhost:5000","timestamp":"2025-06-11T07:16:19.420Z"}
+{"level":"info","message":"Query: SELECT `mydb`.`User`.`id`, `mydb`.`User`.`email`, `mydb`.`User`.`password`, `mydb`.`User`.`role`, `mydb`.`User`.`createdAt`, `mydb`.`User`.`updatedAt` FROM `mydb`.`User` WHERE (`mydb`.`User`.`email` = ? AND 1=1) LIMIT ? OFFSET ?","timestamp":"2025-06-11T07:16:39.777Z"}
+{"level":"info","message":"Params: [\"test2@example.com\",1,0]","timestamp":"2025-06-11T07:16:39.777Z"}
+{"level":"info","message":"Duration: 9ms","timestamp":"2025-06-11T07:16:39.778Z"}
+{"level":"info","message":"Query: BEGIN","timestamp":"2025-06-11T07:16:39.783Z"}
+{"level":"info","message":"Params: []","timestamp":"2025-06-11T07:16:39.783Z"}
+{"level":"info","message":"Duration: 1ms","timestamp":"2025-06-11T07:16:39.783Z"}
+{"level":"info","message":"Query: INSERT INTO `mydb`.`User` (`id`,`email`,`password`,`role`,`createdAt`,`updatedAt`) VALUES (?,?,?,?,?,?)","timestamp":"2025-06-11T07:16:39.796Z"}
+{"level":"info","message":"Params: [null,\"test2@example.com\",\"Password123!\",\"USER\",\"2025-06-11 07:16:39.781 UTC\",\"2025-06-11 07:16:39.781 UTC\"]","timestamp":"2025-06-11T07:16:39.796Z"}
+{"level":"info","message":"Duration: 13ms","timestamp":"2025-06-11T07:16:39.797Z"}
+{"level":"info","message":"Query: SELECT `mydb`.`User`.`id`, `mydb`.`User`.`email`, `mydb`.`User`.`password`, `mydb`.`User`.`role`, `mydb`.`User`.`createdAt`, `mydb`.`User`.`updatedAt` FROM `mydb`.`User` WHERE `mydb`.`User`.`id` = ? LIMIT ? OFFSET ?","timestamp":"2025-06-11T07:16:39.813Z"}
+{"level":"info","message":"Params: [2,1,0]","timestamp":"2025-06-11T07:16:39.813Z"}
+{"level":"info","message":"Duration: 5ms","timestamp":"2025-06-11T07:16:39.814Z"}
+{"level":"info","message":"Query: COMMIT","timestamp":"2025-06-11T07:16:39.825Z"}
+{"level":"info","message":"Params: []","timestamp":"2025-06-11T07:16:39.826Z"}
+{"level":"info","message":"Duration: 12ms","timestamp":"2025-06-11T07:16:39.826Z"}
+{"level":"info","message":"Query: SELECT 1","timestamp":"2025-06-11T07:17:02.654Z"}
+{"level":"info","message":"Params: []","timestamp":"2025-06-11T07:17:02.654Z"}
+{"level":"info","message":"Duration: 2ms","timestamp":"2025-06-11T07:17:02.654Z"}
+{"level":"info","message":"Query: SELECT `mydb`.`User`.`id`, `mydb`.`User`.`email`, `mydb`.`User`.`password`, `mydb`.`User`.`role`, `mydb`.`User`.`createdAt`, `mydb`.`User`.`updatedAt` FROM `mydb`.`User` WHERE (`mydb`.`User`.`id` = ? AND 1=1) LIMIT ? OFFSET ?","timestamp":"2025-06-11T07:17:02.660Z"}
+{"level":"info","message":"Params: [2,1,0]","timestamp":"2025-06-11T07:17:02.660Z"}
+{"level":"info","message":"Duration: 5ms","timestamp":"2025-06-11T07:17:02.661Z"}
+{"level":"info","message":"Query: BEGIN","timestamp":"2025-06-11T07:17:02.665Z"}
+{"level":"info","message":"Params: []","timestamp":"2025-06-11T07:17:02.666Z"}
+{"level":"info","message":"Duration: 1ms","timestamp":"2025-06-11T07:17:02.666Z"}
+{"level":"info","message":"Query: INSERT INTO `mydb`.`Company` (`id`,`name`,`financialYear`,`booksBeginningYear`,`address`,`pin`,`phoneNumber`,`email`,`panNumber`,`gstNumber`,`state`,`country`,`userId`,`createdAt`,`updatedAt`) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)","timestamp":"2025-06-11T07:17:02.673Z"}
+{"level":"info","message":"Params: [null,\"Test Company\",\"2025-26\",\"2025\",\"123 Test Street\",\"400001\",\"9876543210\",\"test@company.com\",\"AAAAA0000A\",\"27AAAAA0000A1Z5\",\"Maharashtra\",\"India\",2,\"2025-06-11 07:17:02.663 UTC\",\"2025-06-11 07:17:02.663 UTC\"]","timestamp":"2025-06-11T07:17:02.674Z"}
+{"level":"info","message":"Duration: 8ms","timestamp":"2025-06-11T07:17:02.675Z"}
+{"level":"info","message":"Query: SELECT `mydb`.`Company`.`id`, `mydb`.`Company`.`name`, `mydb`.`Company`.`financialYear`, `mydb`.`Company`.`booksBeginningYear`, `mydb`.`Company`.`address`, `mydb`.`Company`.`pin`, `mydb`.`Company`.`phoneNumber`, `mydb`.`Company`.`email`, `mydb`.`Company`.`panNumber`, `mydb`.`Company`.`gstNumber`, `mydb`.`Company`.`state`, `mydb`.`Company`.`country`, `mydb`.`Company`.`userId`, `mydb`.`Company`.`createdAt`, `mydb`.`Company`.`updatedAt` FROM `mydb`.`Company` WHERE `mydb`.`Company`.`id` = ? LIMIT ? OFFSET ?","timestamp":"2025-06-11T07:17:02.680Z"}
+{"level":"info","message":"Params: [5,1,0]","timestamp":"2025-06-11T07:17:02.680Z"}
+{"level":"info","message":"Duration: 5ms","timestamp":"2025-06-11T07:17:02.681Z"}
+{"level":"info","message":"Query: COMMIT","timestamp":"2025-06-11T07:17:02.689Z"}
+{"level":"info","message":"Params: []","timestamp":"2025-06-11T07:17:02.690Z"}
+{"level":"info","message":"Duration: 10ms","timestamp":"2025-06-11T07:17:02.690Z"}
+{"level":"info","message":"Server running on http://localhost:5000","timestamp":"2025-06-11T07:21:35.025Z"}
+{"level":"info","message":"Query: SELECT `mydb`.`User`.`id`, `mydb`.`User`.`email`, `mydb`.`User`.`password`, `mydb`.`User`.`role`, `mydb`.`User`.`createdAt`, `mydb`.`User`.`updatedAt` FROM `mydb`.`User` WHERE (`mydb`.`User`.`email` = ? AND 1=1) LIMIT ? OFFSET ?","timestamp":"2025-06-11T07:22:03.249Z"}
+{"level":"info","message":"Params: [\"newuser@example.com\",1,0]","timestamp":"2025-06-11T07:22:03.250Z"}
+{"level":"info","message":"Duration: 5ms","timestamp":"2025-06-11T07:22:03.251Z"}
+{"level":"info","message":"Query: BEGIN","timestamp":"2025-06-11T07:22:03.255Z"}
+{"level":"info","message":"Params: []","timestamp":"2025-06-11T07:22:03.255Z"}
+{"level":"info","message":"Duration: 1ms","timestamp":"2025-06-11T07:22:03.255Z"}
+{"level":"info","message":"Query: INSERT INTO `mydb`.`User` (`id`,`email`,`password`,`role`,`createdAt`,`updatedAt`) VALUES (?,?,?,?,?,?)","timestamp":"2025-06-11T07:22:03.263Z"}
+{"level":"info","message":"Params: [null,\"newuser@example.com\",\"SecurePass123!\",\"USER\",\"2025-06-11 07:22:03.253 UTC\",\"2025-06-11 07:22:03.253 UTC\"]","timestamp":"2025-06-11T07:22:03.264Z"}
+{"level":"info","message":"Duration: 7ms","timestamp":"2025-06-11T07:22:03.264Z"}
+{"level":"info","message":"Query: SELECT `mydb`.`User`.`id`, `mydb`.`User`.`email`, `mydb`.`User`.`password`, `mydb`.`User`.`role`, `mydb`.`User`.`createdAt`, `mydb`.`User`.`updatedAt` FROM `mydb`.`User` WHERE `mydb`.`User`.`id` = ? LIMIT ? OFFSET ?","timestamp":"2025-06-11T07:22:03.268Z"}
+{"level":"info","message":"Params: [3,1,0]","timestamp":"2025-06-11T07:22:03.268Z"}
+{"level":"info","message":"Duration: 3ms","timestamp":"2025-06-11T07:22:03.269Z"}
+{"level":"info","message":"Query: COMMIT","timestamp":"2025-06-11T07:22:03.277Z"}
+{"level":"info","message":"Params: []","timestamp":"2025-06-11T07:22:03.278Z"}
+{"level":"info","message":"Duration: 9ms","timestamp":"2025-06-11T07:22:03.278Z"}
+{"level":"info","message":"Query: SELECT 1","timestamp":"2025-06-11T07:23:25.811Z"}
+{"level":"info","message":"Params: []","timestamp":"2025-06-11T07:23:25.811Z"}
+{"level":"info","message":"Duration: 2ms","timestamp":"2025-06-11T07:23:25.811Z"}
+{"level":"info","message":"Query: SELECT `mydb`.`User`.`id`, `mydb`.`User`.`email`, `mydb`.`User`.`password`, `mydb`.`User`.`role`, `mydb`.`User`.`createdAt`, `mydb`.`User`.`updatedAt` FROM `mydb`.`User` WHERE (`mydb`.`User`.`id` = ? AND 1=1) LIMIT ? OFFSET ?","timestamp":"2025-06-11T07:23:25.817Z"}
+{"level":"info","message":"Params: [3,1,0]","timestamp":"2025-06-11T07:23:25.818Z"}
+{"level":"info","message":"Duration: 6ms","timestamp":"2025-06-11T07:23:25.818Z"}
+{"level":"info","message":"Query: BEGIN","timestamp":"2025-06-11T07:23:25.823Z"}
+{"level":"info","message":"Params: []","timestamp":"2025-06-11T07:23:25.823Z"}
+{"level":"info","message":"Duration: 1ms","timestamp":"2025-06-11T07:23:25.823Z"}
+{"level":"info","message":"Query: INSERT INTO `mydb`.`Company` (`id`,`name`,`financialYear`,`booksBeginningYear`,`address`,`pin`,`phoneNumber`,`email`,`panNumber`,`gstNumber`,`state`,`country`,`userId`,`createdAt`,`updatedAt`) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)","timestamp":"2025-06-11T07:23:25.832Z"}
+{"level":"info","message":"Params: [null,\"Test Company\",\"2025-26\",\"2025\",\"123 Test Street\",\"400001\",\"9876543210\",\"test@company.com\",\"AAAAA0000A\",\"27AAAAA0000A1Z5\",\"Maharashtra\",\"India\",3,\"2025-06-11 07:23:25.821 UTC\",\"2025-06-11 07:23:25.821 UTC\"]","timestamp":"2025-06-11T07:23:25.833Z"}
+{"level":"info","message":"Duration: 9ms","timestamp":"2025-06-11T07:23:25.833Z"}
+{"level":"info","message":"Query: SELECT `mydb`.`Company`.`id`, `mydb`.`Company`.`name`, `mydb`.`Company`.`financialYear`, `mydb`.`Company`.`booksBeginningYear`, `mydb`.`Company`.`address`, `mydb`.`Company`.`pin`, `mydb`.`Company`.`phoneNumber`, `mydb`.`Company`.`email`, `mydb`.`Company`.`panNumber`, `mydb`.`Company`.`gstNumber`, `mydb`.`Company`.`state`, `mydb`.`Company`.`country`, `mydb`.`Company`.`userId`, `mydb`.`Company`.`createdAt`, `mydb`.`Company`.`updatedAt` FROM `mydb`.`Company` WHERE `mydb`.`Company`.`id` = ? LIMIT ? OFFSET ?","timestamp":"2025-06-11T07:23:25.837Z"}
+{"level":"info","message":"Params: [6,1,0]","timestamp":"2025-06-11T07:23:25.837Z"}
+{"level":"info","message":"Duration: 4ms","timestamp":"2025-06-11T07:23:25.838Z"}
+{"level":"info","message":"Query: COMMIT","timestamp":"2025-06-11T07:23:25.844Z"}
+{"level":"info","message":"Params: []","timestamp":"2025-06-11T07:23:25.845Z"}
+{"level":"info","message":"Duration: 6ms","timestamp":"2025-06-11T07:23:25.845Z"}
+{"level":"info","message":"Query: SELECT `mydb`.`Company`.`id`, `mydb`.`Company`.`name`, `mydb`.`Company`.`financialYear`, `mydb`.`Company`.`booksBeginningYear`, `mydb`.`Company`.`address`, `mydb`.`Company`.`pin`, `mydb`.`Company`.`phoneNumber`, `mydb`.`Company`.`email`, `mydb`.`Company`.`panNumber`, `mydb`.`Company`.`gstNumber`, `mydb`.`Company`.`state`, `mydb`.`Company`.`country`, `mydb`.`Company`.`userId`, `mydb`.`Company`.`createdAt`, `mydb`.`Company`.`updatedAt` FROM `mydb`.`Company` WHERE `mydb`.`Company`.`userId` = ? LIMIT ? OFFSET ?","timestamp":"2025-06-11T07:23:34.910Z"}
+{"level":"info","message":"Params: [3,1,0]","timestamp":"2025-06-11T07:23:34.911Z"}
+{"level":"info","message":"Duration: 5ms","timestamp":"2025-06-11T07:23:34.911Z"}
+{"level":"info","message":"Query: SELECT `mydb`.`Ledger`.`id`, `mydb`.`Ledger`.`name`, `mydb`.`Ledger`.`openingBalance`, `mydb`.`Ledger`.`companyId`, `mydb`.`Ledger`.`createdAt`, `mydb`.`Ledger`.`updatedAt` FROM `mydb`.`Ledger` WHERE `mydb`.`Ledger`.`companyId` = ?","timestamp":"2025-06-11T07:23:34.935Z"}
+{"level":"info","message":"Params: [6]","timestamp":"2025-06-11T07:23:34.935Z"}
+{"level":"info","message":"Duration: 6ms","timestamp":"2025-06-11T07:23:34.935Z"}
+{"level":"info","message":"Query: SELECT `mydb`.`Voucher`.`id`, `mydb`.`Voucher`.`companyId`, `mydb`.`Voucher`.`createdAt`, `mydb`.`Voucher`.`updatedAt` FROM `mydb`.`Voucher` WHERE `mydb`.`Voucher`.`companyId` = ?","timestamp":"2025-06-11T07:23:34.947Z"}
+{"level":"info","message":"Params: [6]","timestamp":"2025-06-11T07:23:34.947Z"}
+{"level":"info","message":"Duration: 8ms","timestamp":"2025-06-11T07:23:34.948Z"}
+{"level":"info","message":"Query: SELECT `mydb`.`User`.`id`, `mydb`.`User`.`email`, `mydb`.`User`.`password`, `mydb`.`User`.`role`, `mydb`.`User`.`createdAt`, `mydb`.`User`.`updatedAt` FROM `mydb`.`User` WHERE (`mydb`.`User`.`email` = ? AND 1=1) LIMIT ? OFFSET ?","timestamp":"2025-06-11T07:35:03.783Z"}
+{"level":"info","message":"Params: [\"newuser1@example.com\",1,0]","timestamp":"2025-06-11T07:35:03.784Z"}
+{"level":"info","message":"Duration: 13ms","timestamp":"2025-06-11T07:35:03.785Z"}
+{"level":"info","message":"Query: BEGIN","timestamp":"2025-06-11T07:35:03.789Z"}
+{"level":"info","message":"Params: []","timestamp":"2025-06-11T07:35:03.789Z"}
+{"level":"info","message":"Duration: 2ms","timestamp":"2025-06-11T07:35:03.790Z"}
+{"level":"info","message":"Query: INSERT INTO `mydb`.`User` (`id`,`email`,`password`,`role`,`createdAt`,`updatedAt`) VALUES (?,?,?,?,?,?)","timestamp":"2025-06-11T07:35:03.801Z"}
+{"level":"info","message":"Params: [null,\"newuser1@example.com\",\"SecurePass123!\",\"USER\",\"2025-06-11 07:35:03.786 UTC\",\"2025-06-11 07:35:03.786 UTC\"]","timestamp":"2025-06-11T07:35:03.802Z"}
+{"level":"info","message":"Duration: 12ms","timestamp":"2025-06-11T07:35:03.802Z"}
+{"level":"info","message":"Query: SELECT `mydb`.`User`.`id`, `mydb`.`User`.`email`, `mydb`.`User`.`password`, `mydb`.`User`.`role`, `mydb`.`User`.`createdAt`, `mydb`.`User`.`updatedAt` FROM `mydb`.`User` WHERE `mydb`.`User`.`id` = ? LIMIT ? OFFSET ?","timestamp":"2025-06-11T07:35:03.807Z"}
+{"level":"info","message":"Params: [4,1,0]","timestamp":"2025-06-11T07:35:03.807Z"}
+{"level":"info","message":"Duration: 5ms","timestamp":"2025-06-11T07:35:03.807Z"}
+{"level":"info","message":"Query: COMMIT","timestamp":"2025-06-11T07:35:04.180Z"}
+{"level":"info","message":"Params: []","timestamp":"2025-06-11T07:35:04.181Z"}
+{"level":"info","message":"Duration: 373ms","timestamp":"2025-06-11T07:35:04.181Z"}
+{"level":"info","message":"Server running on http://localhost:5000","timestamp":"2025-06-11T07:42:08.760Z"}
+{"level":"info","message":"Query: SELECT `mydb`.`User`.`id`, `mydb`.`User`.`email`, `mydb`.`User`.`password`, `mydb`.`User`.`role`, `mydb`.`User`.`createdAt`, `mydb`.`User`.`updatedAt` FROM `mydb`.`User` WHERE (`mydb`.`User`.`email` = ? AND 1=1) LIMIT ? OFFSET ?","timestamp":"2025-06-11T07:42:12.907Z"}
+{"level":"info","message":"Params: [\"newuser1@example.com\",1,0]","timestamp":"2025-06-11T07:42:12.908Z"}
+{"level":"info","message":"Duration: 16ms","timestamp":"2025-06-11T07:42:12.908Z"}
+{"level":"info","message":"Server running on http://localhost:5000","timestamp":"2025-06-11T07:46:58.672Z"}
+{"level":"info","message":"Query: SELECT 1","timestamp":"2025-06-11T07:47:11.851Z"}
+{"level":"info","message":"Params: []","timestamp":"2025-06-11T07:47:11.852Z"}
+{"level":"info","message":"Duration: 36ms","timestamp":"2025-06-11T07:47:11.852Z"}
+{"level":"info","message":"Query: SELECT `mydb`.`User`.`id`, `mydb`.`User`.`email`, `mydb`.`User`.`password`, `mydb`.`User`.`role`, `mydb`.`User`.`createdAt`, `mydb`.`User`.`updatedAt` FROM `mydb`.`User` WHERE (`mydb`.`User`.`email` = ? AND 1=1) LIMIT ? OFFSET ?","timestamp":"2025-06-11T07:47:11.856Z"}
+{"level":"info","message":"Params: [\"newuser2@example.com\",1,0]","timestamp":"2025-06-11T07:47:11.857Z"}
+{"level":"info","message":"Duration: 4ms","timestamp":"2025-06-11T07:47:11.857Z"}
+{"level":"info","message":"Query: BEGIN","timestamp":"2025-06-11T07:47:11.909Z"}
+{"level":"info","message":"Params: []","timestamp":"2025-06-11T07:47:11.909Z"}
+{"level":"info","message":"Duration: 1ms","timestamp":"2025-06-11T07:47:11.909Z"}
+{"level":"info","message":"Query: INSERT INTO `mydb`.`User` (`id`,`email`,`password`,`role`,`createdAt`,`updatedAt`) VALUES (?,?,?,?,?,?)","timestamp":"2025-06-11T07:47:11.967Z"}
+{"level":"info","message":"Params: [null,\"newuser2@example.com\",\"SecurePass123\",\"USER\",\"2025-06-11 07:47:11.859 UTC\",\"2025-06-11 07:47:11.859 UTC\"]","timestamp":"2025-06-11T07:47:11.967Z"}
+{"level":"info","message":"Duration: 28ms","timestamp":"2025-06-11T07:47:11.968Z"}
+{"level":"info","message":"Query: SELECT `mydb`.`User`.`id`, `mydb`.`User`.`email`, `mydb`.`User`.`password`, `mydb`.`User`.`role`, `mydb`.`User`.`createdAt`, `mydb`.`User`.`updatedAt` FROM `mydb`.`User` WHERE `mydb`.`User`.`id` = ? LIMIT ? OFFSET ?","timestamp":"2025-06-11T07:47:11.975Z"}
+{"level":"info","message":"Params: [5,1,0]","timestamp":"2025-06-11T07:47:11.975Z"}
+{"level":"info","message":"Duration: 6ms","timestamp":"2025-06-11T07:47:11.975Z"}
+{"level":"info","message":"Query: COMMIT","timestamp":"2025-06-11T07:47:12.008Z"}
+{"level":"info","message":"Params: []","timestamp":"2025-06-11T07:47:12.009Z"}
+{"level":"info","message":"Duration: 32ms","timestamp":"2025-06-11T07:47:12.009Z"}
+{"level":"info","message":"Server running on http://localhost:5000","timestamp":"2025-06-11T08:06:02.252Z"}
+{"level":"info","message":"Query: SELECT `mydb`.`User`.`id`, `mydb`.`User`.`email`, `mydb`.`User`.`password`, `mydb`.`User`.`role`, `mydb`.`User`.`createdAt`, `mydb`.`User`.`updatedAt` FROM `mydb`.`User` WHERE (`mydb`.`User`.`email` = ? AND 1=1) LIMIT ? OFFSET ?","timestamp":"2025-06-11T08:06:15.291Z"}
+{"level":"info","message":"Params: [\"newuser3@example.com\",1,0]","timestamp":"2025-06-11T08:06:15.295Z"}
+{"level":"info","message":"Duration: 54ms","timestamp":"2025-06-11T08:06:15.295Z"}
+{"level":"info","message":"Query: BEGIN","timestamp":"2025-06-11T08:06:15.301Z"}
+{"level":"info","message":"Params: []","timestamp":"2025-06-11T08:06:15.301Z"}
+{"level":"info","message":"Duration: 1ms","timestamp":"2025-06-11T08:06:15.302Z"}
+{"level":"info","message":"Query: INSERT INTO `mydb`.`User` (`id`,`email`,`password`,`role`,`createdAt`,`updatedAt`) VALUES (?,?,?,?,?,?)","timestamp":"2025-06-11T08:06:15.359Z"}
+{"level":"info","message":"Params: [null,\"newuser3@example.com\",\"SecurePass123\",\"USER\",\"2025-06-11 08:06:15.298 UTC\",\"2025-06-11 08:06:15.298 UTC\"]","timestamp":"2025-06-11T08:06:15.359Z"}
+{"level":"info","message":"Duration: 21ms","timestamp":"2025-06-11T08:06:15.360Z"}
+{"level":"info","message":"Query: SELECT `mydb`.`User`.`id`, `mydb`.`User`.`email`, `mydb`.`User`.`password`, `mydb`.`User`.`role`, `mydb`.`User`.`createdAt`, `mydb`.`User`.`updatedAt` FROM `mydb`.`User` WHERE `mydb`.`User`.`id` = ? LIMIT ? OFFSET ?","timestamp":"2025-06-11T08:06:15.367Z"}
+{"level":"info","message":"Params: [6,1,0]","timestamp":"2025-06-11T08:06:15.368Z"}
+{"level":"info","message":"Duration: 6ms","timestamp":"2025-06-11T08:06:15.368Z"}
+{"level":"info","message":"Query: COMMIT","timestamp":"2025-06-11T08:06:15.388Z"}
+{"level":"info","message":"Params: []","timestamp":"2025-06-11T08:06:15.388Z"}
+{"level":"info","message":"Duration: 18ms","timestamp":"2025-06-11T08:06:15.388Z"}
+{"level":"info","message":"Server running on http://localhost:5000","timestamp":"2025-06-11T08:13:23.687Z"}
+{"level":"info","message":"Query: SELECT `mydb`.`User`.`id`, `mydb`.`User`.`email`, `mydb`.`User`.`password`, `mydb`.`User`.`role`, `mydb`.`User`.`createdAt`, `mydb`.`User`.`updatedAt` FROM `mydb`.`User` WHERE (`mydb`.`User`.`email` = ? AND 1=1) LIMIT ? OFFSET ?","timestamp":"2025-06-11T08:13:40.066Z"}
+{"level":"info","message":"Params: [\"newuser3@example.com\",1,0]","timestamp":"2025-06-11T08:13:40.076Z"}
+{"level":"info","message":"Duration: 90ms","timestamp":"2025-06-11T08:13:40.076Z"}
+{"level":"info","message":"Server running on http://localhost:5000","timestamp":"2025-06-11T08:28:27.054Z"}
+{"level":"info","message":"Query: SELECT `mydb`.`User`.`id`, `mydb`.`User`.`email`, `mydb`.`User`.`password`, `mydb`.`User`.`role`, `mydb`.`User`.`createdAt`, `mydb`.`User`.`updatedAt` FROM `mydb`.`User` WHERE (`mydb`.`User`.`email` = ? AND 1=1) LIMIT ? OFFSET ?","timestamp":"2025-06-11T08:28:58.909Z"}
+{"level":"info","message":"Params: [\"vikky@gmail.com\",1,0]","timestamp":"2025-06-11T08:28:58.916Z"}
+{"level":"info","message":"Duration: 47ms","timestamp":"2025-06-11T08:28:58.917Z"}
+{"level":"info","message":"Query: BEGIN","timestamp":"2025-06-11T08:28:58.931Z"}
+{"level":"info","message":"Params: []","timestamp":"2025-06-11T08:28:58.934Z"}
+{"level":"info","message":"Duration: 4ms","timestamp":"2025-06-11T08:28:58.935Z"}
+{"level":"info","message":"Query: INSERT INTO `mydb`.`User` (`id`,`email`,`password`,`role`,`createdAt`,`updatedAt`) VALUES (?,?,?,?,?,?)","timestamp":"2025-06-11T08:28:59.012Z"}
+{"level":"info","message":"Params: [null,\"vikky@gmail.com\",\"SecurePass123\",\"USER\",\"2025-06-11 08:28:58.923 UTC\",\"2025-06-11 08:28:58.923 UTC\"]","timestamp":"2025-06-11T08:28:59.013Z"}
+{"level":"info","message":"Duration: 71ms","timestamp":"2025-06-11T08:28:59.015Z"}
+{"level":"info","message":"Query: SELECT `mydb`.`User`.`id`, `mydb`.`User`.`email`, `mydb`.`User`.`password`, `mydb`.`User`.`role`, `mydb`.`User`.`createdAt`, `mydb`.`User`.`updatedAt` FROM `mydb`.`User` WHERE `mydb`.`User`.`id` = ? LIMIT ? OFFSET ?","timestamp":"2025-06-11T08:28:59.027Z"}
+{"level":"info","message":"Params: [7,1,0]","timestamp":"2025-06-11T08:28:59.031Z"}
+{"level":"info","message":"Duration: 11ms","timestamp":"2025-06-11T08:28:59.032Z"}
+{"level":"info","message":"Query: COMMIT","timestamp":"2025-06-11T08:28:59.434Z"}
+{"level":"info","message":"Params: []","timestamp":"2025-06-11T08:28:59.498Z"}
+{"level":"info","message":"Duration: 405ms","timestamp":"2025-06-11T08:28:59.502Z"}
+{"level":"info","message":"Server running on http://localhost:5000","timestamp":"2025-06-11T08:30:58.106Z"}
+{"level":"info","message":"Query: SELECT 1","timestamp":"2025-06-11T08:31:03.009Z"}
+{"level":"info","message":"Params: []","timestamp":"2025-06-11T08:31:03.014Z"}
+{"level":"info","message":"Duration: 52ms","timestamp":"2025-06-11T08:31:03.017Z"}
+{"level":"info","message":"Query: SELECT `mydb`.`User`.`id`, `mydb`.`User`.`email`, `mydb`.`User`.`password`, `mydb`.`User`.`role`, `mydb`.`User`.`createdAt`, `mydb`.`User`.`updatedAt` FROM `mydb`.`User` WHERE (`mydb`.`User`.`email` = ? AND 1=1) LIMIT ? OFFSET ?","timestamp":"2025-06-11T08:31:03.075Z"}
+{"level":"info","message":"Params: [\"vikky@gmail.com\",1,0]","timestamp":"2025-06-11T08:31:03.079Z"}
+{"level":"info","message":"Duration: 65ms","timestamp":"2025-06-11T08:31:03.080Z"}
+{"level":"info","message":"Server running on http://localhost:5000","timestamp":"2025-06-11T08:35:00.544Z"}
+{"level":"info","message":"Query: SELECT `mydb`.`User`.`id`, `mydb`.`User`.`email`, `mydb`.`User`.`password`, `mydb`.`User`.`role`, `mydb`.`User`.`createdAt`, `mydb`.`User`.`updatedAt` FROM `mydb`.`User` WHERE (`mydb`.`User`.`email` = ? AND 1=1) LIMIT ? OFFSET ?","timestamp":"2025-06-11T08:35:27.194Z"}
+{"level":"info","message":"Params: [\"vikky@gmail.com\",1,0]","timestamp":"2025-06-11T08:35:27.199Z"}
+{"level":"info","message":"Duration: 10ms","timestamp":"2025-06-11T08:35:27.199Z"}
+{"level":"info","message":"Query: BEGIN","timestamp":"2025-06-11T08:35:27.234Z"}
+{"level":"info","message":"Params: []","timestamp":"2025-06-11T08:35:27.234Z"}
+{"level":"info","message":"Duration: 2ms","timestamp":"2025-06-11T08:35:27.235Z"}
+{"level":"info","message":"Query: INSERT INTO `mydb`.`User` (`id`,`email`,`password`,`role`,`createdAt`,`updatedAt`) VALUES (?,?,?,?,?,?)","timestamp":"2025-06-11T08:35:27.247Z"}
+{"level":"info","message":"Params: [null,\"vikky@gmail.com\",\"SecurePass123\",\"USER\",\"2025-06-11 08:35:27.205 UTC\",\"2025-06-11 08:35:27.205 UTC\"]","timestamp":"2025-06-11T08:35:27.248Z"}
+{"level":"info","message":"Duration: 6ms","timestamp":"2025-06-11T08:35:27.249Z"}
+{"level":"info","message":"Query: SELECT `mydb`.`User`.`id`, `mydb`.`User`.`email`, `mydb`.`User`.`password`, `mydb`.`User`.`role`, `mydb`.`User`.`createdAt`, `mydb`.`User`.`updatedAt` FROM `mydb`.`User` WHERE `mydb`.`User`.`id` = ? LIMIT ? OFFSET ?","timestamp":"2025-06-11T08:35:27.255Z"}
+{"level":"info","message":"Params: [1,1,0]","timestamp":"2025-06-11T08:35:27.256Z"}
+{"level":"info","message":"Duration: 5ms","timestamp":"2025-06-11T08:35:27.256Z"}
+{"level":"info","message":"Query: COMMIT","timestamp":"2025-06-11T08:35:27.265Z"}
+{"level":"info","message":"Params: []","timestamp":"2025-06-11T08:35:27.266Z"}
+{"level":"info","message":"Duration: 8ms","timestamp":"2025-06-11T08:35:27.266Z"}
+{"level":"info","message":"Server running on http://localhost:5000","timestamp":"2025-06-11T09:16:09.256Z"}
+{"level":"info","message":"Query: SELECT `mydb`.`User`.`id`, `mydb`.`User`.`email`, `mydb`.`User`.`password`, `mydb`.`User`.`role`, `mydb`.`User`.`createdAt`, `mydb`.`User`.`updatedAt` FROM `mydb`.`User` WHERE (`mydb`.`User`.`email` = ? AND 1=1) LIMIT ? OFFSET ?","timestamp":"2025-06-11T09:16:15.500Z"}
+{"level":"info","message":"Params: [\"vikky@gmail.com\",1,0]","timestamp":"2025-06-11T09:16:15.506Z"}
+{"level":"info","message":"Duration: 135ms","timestamp":"2025-06-11T09:16:15.507Z"}
+{"level":"info","message":"Server running on http://localhost:5000","timestamp":"2025-06-11T09:24:43.701Z"}
+{"level":"info","message":"Query: SELECT `mydb`.`User`.`id`, `mydb`.`User`.`email`, `mydb`.`User`.`password`, `mydb`.`User`.`role`, `mydb`.`User`.`createdAt`, `mydb`.`User`.`updatedAt` FROM `mydb`.`User` WHERE (`mydb`.`User`.`email` = ? AND 1=1) LIMIT ? OFFSET ?","timestamp":"2025-06-11T09:24:57.622Z"}
+{"level":"info","message":"Params: [\"vikky12@gmail.com\",1,0]","timestamp":"2025-06-11T09:24:57.632Z"}
+{"level":"info","message":"Duration: 85ms","timestamp":"2025-06-11T09:24:57.633Z"}
+{"level":"info","message":"Query: BEGIN","timestamp":"2025-06-11T09:24:57.794Z"}
+{"level":"info","message":"Params: []","timestamp":"2025-06-11T09:24:57.795Z"}
+{"level":"info","message":"Duration: 28ms","timestamp":"2025-06-11T09:24:57.797Z"}
+{"level":"info","message":"Query: INSERT INTO `mydb`.`User` (`id`,`email`,`password`,`role`,`createdAt`,`updatedAt`) VALUES (?,?,?,?,?,?)","timestamp":"2025-06-11T09:24:57.953Z"}
+{"level":"info","message":"Params: [null,\"vikky12@gmail.com\",\"SecurePass123\",\"USER\",\"2025-06-11 09:24:57.660 UTC\",\"2025-06-11 09:24:57.660 UTC\"]","timestamp":"2025-06-11T09:24:57.953Z"}
+{"level":"info","message":"Duration: 92ms","timestamp":"2025-06-11T09:24:57.955Z"}
+{"level":"info","message":"Query: SELECT `mydb`.`User`.`id`, `mydb`.`User`.`email`, `mydb`.`User`.`password`, `mydb`.`User`.`role`, `mydb`.`User`.`createdAt`, `mydb`.`User`.`updatedAt` FROM `mydb`.`User` WHERE `mydb`.`User`.`id` = ? LIMIT ? OFFSET ?","timestamp":"2025-06-11T09:24:57.969Z"}
+{"level":"info","message":"Params: [2,1,0]","timestamp":"2025-06-11T09:24:57.970Z"}
+{"level":"info","message":"Duration: 12ms","timestamp":"2025-06-11T09:24:57.972Z"}
+{"level":"info","message":"Query: COMMIT","timestamp":"2025-06-11T09:24:58.047Z"}
+{"level":"info","message":"Params: []","timestamp":"2025-06-11T09:24:58.048Z"}
+{"level":"info","message":"Duration: 76ms","timestamp":"2025-06-11T09:24:58.049Z"}
+{"level":"info","message":"Server running on http://localhost:5000","timestamp":"2025-06-11T09:27:09.097Z"}
+{"level":"info","message":"Server running on http://localhost:5000","timestamp":"2025-06-11T09:27:22.734Z"}
+{"level":"info","message":"Server running on http://localhost:5000","timestamp":"2025-06-11T09:27:26.725Z"}
+{"level":"info","message":"Query: SELECT 1","timestamp":"2025-06-11T09:27:47.566Z"}
+{"level":"info","message":"Params: []","timestamp":"2025-06-11T09:27:47.572Z"}
+{"level":"info","message":"Duration: 67ms","timestamp":"2025-06-11T09:27:47.576Z"}
+{"level":"info","message":"Query: SELECT `mydb`.`User`.`id`, `mydb`.`User`.`email`, `mydb`.`User`.`password`, `mydb`.`User`.`role`, `mydb`.`User`.`createdAt`, `mydb`.`User`.`updatedAt` FROM `mydb`.`User` WHERE (`mydb`.`User`.`email` = ? AND 1=1) LIMIT ? OFFSET ?","timestamp":"2025-06-11T09:27:47.688Z"}
+{"level":"info","message":"Params: [\"vikky12@gmail.com\",1,0]","timestamp":"2025-06-11T09:27:47.690Z"}
+{"level":"info","message":"Duration: 22ms","timestamp":"2025-06-11T09:27:47.695Z"}
+{"level":"info","message":"Server running on http://localhost:5000","timestamp":"2025-06-11T09:30:51.202Z"}
+{"level":"info","message":"Server running on http://localhost:5000","timestamp":"2025-06-11T09:30:51.201Z"}
+{"level":"info","message":"Server running on http://localhost:5000","timestamp":"2025-06-11T09:31:59.090Z"}
+{"level":"info","message":"Server running on http://localhost:5000","timestamp":"2025-06-11T09:31:59.148Z"}
+{"level":"info","message":"Server running on http://localhost:5000","timestamp":"2025-06-11T09:32:38.361Z"}
+{"level":"info","message":"Server running on http://localhost:5000","timestamp":"2025-06-11T09:32:38.361Z"}
+{"level":"info","message":"Server running on http://localhost:5000","timestamp":"2025-06-11T09:33:54.976Z"}
+{"level":"info","message":"Server running on http://localhost:5000","timestamp":"2025-06-11T09:33:54.975Z"}
+{"level":"info","message":"Server running on http://localhost:5000","timestamp":"2025-06-11T09:34:57.844Z"}
+{"level":"info","message":"Server running on http://localhost:5000","timestamp":"2025-06-11T09:34:59.187Z"}
+{"level":"info","message":"Server running on http://localhost:5000","timestamp":"2025-06-11T09:35:25.881Z"}
+{"level":"info","message":"Server running on http://localhost:5000","timestamp":"2025-06-11T09:35:25.886Z"}
+{"level":"info","message":"Server running on http://localhost:5000","timestamp":"2025-06-11T09:40:34.241Z"}
+{"level":"info","message":"Login attempt for username: vikky12@gmail.com","timestamp":"2025-06-11T09:40:47.309Z"}
+{"level":"info","message":"Prisma middleware triggered for model: User, action: findUnique","timestamp":"2025-06-11T09:40:47.315Z"}
+{"level":"info","message":"Query: SELECT `mydb`.`User`.`id`, `mydb`.`User`.`email`, `mydb`.`User`.`password`, `mydb`.`User`.`role`, `mydb`.`User`.`createdAt`, `mydb`.`User`.`updatedAt` FROM `mydb`.`User` WHERE (`mydb`.`User`.`email` = ? AND 1=1) LIMIT ? OFFSET ?","timestamp":"2025-06-11T09:40:47.700Z"}
+{"level":"info","message":"Params: [\"vikky12@gmail.com\",1,0]","timestamp":"2025-06-11T09:40:47.701Z"}
+{"level":"info","message":"Duration: 32ms","timestamp":"2025-06-11T09:40:47.702Z"}
+{"level":"warn","message":"Invalid password attempt for user: vikky12@gmail.com","timestamp":"2025-06-11T09:40:47.704Z"}
+{"level":"info","message":"Login attempt for username: vikky@gmail.com","timestamp":"2025-06-11T09:43:57.684Z"}
+{"level":"info","message":"Prisma middleware triggered for model: User, action: findUnique","timestamp":"2025-06-11T09:43:57.689Z"}
+{"level":"info","message":"Query: SELECT 1","timestamp":"2025-06-11T09:43:57.738Z"}
+{"level":"info","message":"Params: []","timestamp":"2025-06-11T09:43:57.739Z"}
+{"level":"info","message":"Duration: 21ms","timestamp":"2025-06-11T09:43:57.739Z"}
+{"level":"info","message":"Query: SELECT `mydb`.`User`.`id`, `mydb`.`User`.`email`, `mydb`.`User`.`password`, `mydb`.`User`.`role`, `mydb`.`User`.`createdAt`, `mydb`.`User`.`updatedAt` FROM `mydb`.`User` WHERE (`mydb`.`User`.`email` = ? AND 1=1) LIMIT ? OFFSET ?","timestamp":"2025-06-11T09:43:57.759Z"}
+{"level":"info","message":"Params: [\"vikky@gmail.com\",1,0]","timestamp":"2025-06-11T09:43:57.760Z"}
+{"level":"info","message":"Duration: 19ms","timestamp":"2025-06-11T09:43:57.760Z"}
+{"level":"warn","message":"Invalid password attempt for user: vikky@gmail.com","timestamp":"2025-06-11T09:43:57.761Z"}
+{"level":"info","message":"Login attempt for username: vikky@gmail.com","timestamp":"2025-06-11T09:44:06.245Z"}
+{"level":"info","message":"Prisma middleware triggered for model: User, action: findUnique","timestamp":"2025-06-11T09:44:06.245Z"}
+{"level":"info","message":"Query: SELECT `mydb`.`User`.`id`, `mydb`.`User`.`email`, `mydb`.`User`.`password`, `mydb`.`User`.`role`, `mydb`.`User`.`createdAt`, `mydb`.`User`.`updatedAt` FROM `mydb`.`User` WHERE (`mydb`.`User`.`email` = ? AND 1=1) LIMIT ? OFFSET ?","timestamp":"2025-06-11T09:44:06.250Z"}
+{"level":"info","message":"Params: [\"vikky@gmail.com\",1,0]","timestamp":"2025-06-11T09:44:06.250Z"}
+{"level":"info","message":"Duration: 3ms","timestamp":"2025-06-11T09:44:06.251Z"}
+{"level":"warn","message":"Invalid password attempt for user: vikky@gmail.com","timestamp":"2025-06-11T09:44:06.251Z"}
