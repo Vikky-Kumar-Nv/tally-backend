@@ -10,8 +10,18 @@ app.use(cors());
 app.use(bodyParser.json());
 
 // ✅ Routes
+app.get('/', (req, res) => {
+  res.json({
+    status: 'success',
+    message: 'GST Billing Backend API is running successfully',
+    timestamp: new Date().toISOString(),
+    version: '1.0.0'
+  });
+});
+
 const ledgerGroupRoutes = require('./routes/ledgerGroups');
 app.use('/api/ledger-groups', ledgerGroupRoutes);
+
 
 const ledgerRoutes = require('./routes/ledger');
 app.use('/api/ledger', ledgerRoutes);
