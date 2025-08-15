@@ -1,11 +1,11 @@
 {
   "name": "backend",
   "version": "1.0.0",
-  "main": "index.js",
+  "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node public/index.js",
-    "dev": "concurrently \"tsc -b --watch\" \"nodemon public/index.js\"",
+    "start": "node server.js",
+    "dev": "concurrently \"tsc -b --watch\" \"nodemon server.js\"",
     "build": "tsc"
   },
   "keywords": [],
